@@ -1,6 +1,69 @@
 # Car Rental Management System Design Specification
 
-## 1. Customer Information Management
+## 1. Features
+
+### 1.1 Core Features
+
+1. Customer Management
+   - Customer CRUD operations
+   - Customer history tracking
+
+2. Vehicle Management
+   - Inventory tracking
+   - Vehicle status monitoring (Available, Rented, Maintenance)
+   - Mileage tracking
+
+3. Rental Contract Management
+   - Contract creation and modification
+   - Pricing calculation with taxes
+   - Security deposit handling
+   - Multi-location pickup and return
+   - Condition reporting
+   - Kilometer tracking
+   - Invoice generation
+
+4. User Management
+   - Two-role system (Admin and Worker)
+   - Secure authentication
+   - Activity logging
+   - Role-based permissions
+
+### 1.2 Additional Features
+
+1. Reporting
+   - Rental statistics
+   - Business performance analysis
+
+3. Notifications
+   - Use WhatsApp API to send notifications
+   - Notify Admin a week before the insurance & inspection expiry date
+   - Notify Admin 2 days before the rental contract ends
+   - Notify Admin when a vehicle is returned
+   - Notify Admin when a vehicle is rented
+
+## 2 User Stories
+
+#### **Worker :**
+- As a Worker, I want to register new customers so that they can rent vehicles
+- As a Worker, I want to check vehicle availability so that I can make reservations
+- As a Worker, I want to create rental contracts so that customers can rent vehicles
+- As a Worker, I want to process vehicle returns so that I can close rental contracts
+- As a Worker, I want to record vehicle condition so that damages can be tracked
+- As a Worker, I want to calculate rental charges so that customers can be billed correctly
+- As a Worker, I want to update vehicle status so that availability is accurate
+- As a Worker, I want to handle security deposits
+- As a Worker, I want to generate invoices so that customers can pay and sign
+
+#### **Administrator :**
+- As an admin, I want to view rental statistics so that I can analyze business performance
+- As an admin, I want to manage vehicle inventory so that I can maintain fleet information
+- As an admin, I want to set pricing rules so that rental rates are consistent
+- As an admin, I want to generate reports so that I can monitor business operations
+- As an admin, I want to monitor Worker activities so that I can ensure proper system usage
+- As an admin, I want to handle system configurations so that business rules are properly implemented
+- As an admin, I want to manage maintenance schedules so that vehicles are properly maintained
+
+## 2. Database Design
 
 ### Database Table: customers
 
@@ -17,8 +80,8 @@
 | license_issue_date | DATE | License issuance date |
 | address | TEXT | Current living address |
 | phone_number | VARCHAR(20) | Primary contact number |
-
-## 2. Vehicle Management
+| created_at | TIMESTAMP | Record creation timestamp |
+| updated_at | TIMESTAMP | Last update timestamp |
 
 ### Database Table: vehicles
 
@@ -31,8 +94,8 @@
 | insurance_expiry | DATE | Insurance validity end date |
 | inspection_expiry | DATE | Technical inspection validity end date |
 | vehicle_condition | ENUM | Current state (Available, Rented, Maintenance) |
-
-## 3. Rental Contract Management
+| created_at | TIMESTAMP | Record creation timestamp |
+| updated_at | TIMESTAMP | Last update timestamp |
 
 ### Database Table: rental_contracts
 
@@ -57,10 +120,10 @@
 | stamp_duty | DECIMAL(10,2) | Applicable stamp duty |
 | vat_percentage | DECIMAL(5,2) | VAT rate |
 | total_price | DECIMAL(10,2) | Final invoice amount |
+| payment_method | ENUM | Payment type (Cash, Credit Card, Check) |
+| payment_status | ENUM | Payment status (Paid, Unpaid) |
 | created_at | TIMESTAMP | Contract creation timestamp |
 | updated_at | TIMESTAMP | Last update timestamp |
-
-## 4. User Authentication System
 
 ### Database Table: users
 
@@ -70,3 +133,5 @@
 | username | VARCHAR(50) | Login username |
 | password_hash | VARCHAR(255) | Encrypted password |
 | role | ENUM | User role (Admin, Staff) |
+| created_at | TIMESTAMP | Account creation timestamp |
+| updated_at | TIMESTAMP | Last update timestamp |
