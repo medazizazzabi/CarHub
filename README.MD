@@ -2,44 +2,48 @@
 
 ## 1. Features
 
-### 1.1 Core Features
+<details>
+    <summary>Core Features</summary>
+    
+    1. Customer Management
+        - Customer CRUD operations
+        - Customer history tracking
 
-1. Customer Management
-   - Customer CRUD operations
-   - Customer history tracking
+    2. Vehicle Management
+        - Inventory tracking
+        - Vehicle status monitoring (Available, Rented, Maintenance)
+        - Mileage tracking
 
-2. Vehicle Management
-   - Inventory tracking
-   - Vehicle status monitoring (Available, Rented, Maintenance)
-   - Mileage tracking
+    3. Rental Contract Management
+        - Contract creation and modification
+        - Pricing calculation with taxes
+        - Security deposit handling
+        - Multi-location pickup and return
+        - Condition reporting
+        - Kilometer tracking
+        - Invoice generation
 
-3. Rental Contract Management
-   - Contract creation and modification
-   - Pricing calculation with taxes
-   - Security deposit handling
-   - Multi-location pickup and return
-   - Condition reporting
-   - Kilometer tracking
-   - Invoice generation
+    4. User Management
+        - Two-role system (Admin and Worker)
+        - Secure authentication
+        - Activity logging
+        - Role-based permissions
+</details>
 
-4. User Management
-   - Two-role system (Admin and Worker)
-   - Secure authentication
-   - Activity logging
-   - Role-based permissions
+<details>
+    <summary>Additional Features</summary>
 
-### 1.2 Additional Features
+    1. Reporting
+        - Rental statistics
+        - Business performance analysis
 
-1. Reporting
-   - Rental statistics
-   - Business performance analysis
-
-3. Notifications
-   - Use WhatsApp API to send notifications
-   - Notify Admin a week before the insurance & inspection expiry date
-   - Notify Admin 2 days before the rental contract ends
-   - Notify Admin when a vehicle is returned
-   - Notify Admin when a vehicle is rented
+    2. Notifications
+        - Use WhatsApp API to send notifications
+        - Notify Admin a week before the insurance & inspection expiry date
+        - Notify Admin 2 days before the rental contract ends
+        - Notify Admin when a vehicle is returned
+        - Notify Admin when a vehicle is rented
+</details>
 
 ## 2 User Stories
 
