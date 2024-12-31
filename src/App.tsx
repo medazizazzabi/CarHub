@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard';
 import Customers from './pages/customers/Customers';
 import Vehicles from './pages/vehicles/Vehicles';
 import Rentals from './pages/rentals/Rentals';
+import Settings from './pages/settings/Settings';
 
 export default function App() {
   return (
@@ -34,6 +35,11 @@ export default function App() {
             <Route path="/rentals/*" element={
               <PrivateRoute>
                 <Rentals />
+              </PrivateRoute>
+            } />
+            <Route path="/settings" element={
+              <PrivateRoute>
+                <Settings />
               </PrivateRoute>
             } />
           </Route>

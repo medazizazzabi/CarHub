@@ -1,11 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Car, Users, CalendarRange, LayoutDashboard } from 'lucide-react';
+import { Car, Users, CalendarRange, LayoutDashboard, Settings } from 'lucide-react';
 
 const navigation = [
   { name: 'Dashboard', href: '/', icon: LayoutDashboard },
   { name: 'Customers', href: '/customers', icon: Users },
   { name: 'Vehicles', href: '/vehicles', icon: Car },
   { name: 'Rentals', href: '/rentals', icon: CalendarRange },
+  { name: 'Settings', href: '/settings', icon: Settings },
 ];
 
 export default function Sidebar() {

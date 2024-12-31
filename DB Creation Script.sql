@@ -1,3 +1,21 @@
+-- Table: customers
+CREATE TABLE customers (
+    customer_id INTEGER PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    place_of_birth VARCHAR(100),
+    nationality VARCHAR(50),
+    id_card_number VARCHAR(50) UNIQUE NOT NULL,
+    id_card_issue_date DATE,
+    license_number VARCHAR(50) UNIQUE,
+    license_issue_date DATE,
+    address TEXT,
+    phone_number VARCHAR(20),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- Table: vehicles
 CREATE TABLE vehicles (
     vehicle_id INTEGER PRIMARY KEY,

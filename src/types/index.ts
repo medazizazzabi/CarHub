@@ -15,6 +15,7 @@ export interface Customer {
   nationality: string;
   idCardNumber: string;
   idCardIssueDate: string;
+  idCardExpiryDate: string;
   driverLicenseNumber: string;
   driverLicenseExpiry: string;
   address: string;
@@ -24,6 +25,8 @@ export interface Customer {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface CustomerFormData extends Omit<Customer, 'id' | 'documents' | 'createdAt' | 'updatedAt'> {}
 
 export interface Document {
   id: string;
@@ -85,8 +88,9 @@ export interface RentalContract {
   returnLocation: string;
   dailyRate: number;
   securityDeposit: number;
+  insuranceOption: 'basic' | 'premium' | 'full';
   primaryDriver: Driver;
-  secondaryDrivers: Driver[];
+  additionalDrivers: Driver[];
   startMileage: number;
   endMileage?: number;
   additionalCharges: Charge[];
@@ -94,7 +98,13 @@ export interface RentalContract {
   signature: string;
   totalAmount: number;
   paymentStatus: 'pending' | 'partial' | 'completed';
+  notes?: string;
+  termsAccepted: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
+
+export interface RentalFormData extends Omit<RentalContract, 'id' | 'startMileage' | 'endMileage' | 'additionalCharges' | 'signature' | 'totalAmount' | 'paymentStatus' | 'createdAt' | 'updatedAt'> {}
 
 export interface Driver {
   fullName: string;
